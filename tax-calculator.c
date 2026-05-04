@@ -3,13 +3,13 @@
 
 int main(void)
 {
-    float amount,tax,dollars;
+    double amount,tax,dollars;
 
     printf("Write the value in dollars and cents: ");
-    scanf("%f", &dollars);
+    scanf("%lf", &dollars);
 
     tax = dollars * TAX_PERCENT;
     amount = dollars + tax;
-    printf("the amount with taxes is %.2f", amount );
+    printf("the amount with taxes is %g", amount );
     return 0;
 }
