@@ -3,13 +3,14 @@
 int main(void)
 
 {
-    int value,commission;
+    int value;
+    float commission;
     printf("Enter value of trade: ");
     scanf("%d", &value);
 
-    if (value > 500,000){
+    if (value > 500000){
         commission = 255 + (0.09 * value)/100;
-    }else if (value > 50,000){
+    }else if (value > 50000){
         commission = 155 + (0.11 * value)/100;
     }else if (value > 25000){
         commission = 100 + (0.22 * value)/100;
@@ -23,7 +24,7 @@ int main(void)
         commission = 39;
     }
 
-    printf("The commission is $%d", commission);
+    printf("The commission is $%.2f", commission);
 
     return 0;
 }
