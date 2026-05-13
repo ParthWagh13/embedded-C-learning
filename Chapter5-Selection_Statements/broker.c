@@ -3,10 +3,19 @@
 int main(void)
 
 {
-    int value;
-    float commission;
-    printf("Enter value of trade: ");
-    scanf("%d", &value);
+    int number, value;
+    float shares, rivalcommission, commission;
+
+    printf("Enter the number of shares: ");
+    scanf("%d", &number);
+
+    printf("Enter the price per share: ");
+    scanf("%f", &shares);
+
+    value = number * shares;
+    printf("The value of the shares is %d\n" , value);
+
+       /* Original broker's commission*/
 
     if (value > 500000){
         commission = 255.00f + (0.09f * value)/100.00f;
@@ -24,7 +33,17 @@ int main(void)
         commission = 39;
     }
 
-    printf("The commission is $%.2f", commission);
+      /* Rival Broker's Comission */
+
+    if (number < 2000) {
+	rivalcommission = 33.00f + (0.03f * shares);
+    }else if (number >= 2000){
+	rivalcommission = 33.00f + (0.02f * shares);
+    }
+
+
+    printf("The commission is $%.2f\n", commission);
+    printf("The commission of rival broker is $%.2f\n" , rivalcommission);
 
     return 0;
 }
