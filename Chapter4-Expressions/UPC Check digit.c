@@ -3,7 +3,7 @@
 int main(void)
 
 {
-    int one,two,three,four,five,six,seven,eight,nine,ten,eleven,first,second,third,fourth,fifth,sixth;
+    int check,one,two,three,four,five,six,seven,eight,nine,ten,eleven,first,second,third,fourth,fifth,sixth;
     printf("Enter the first(single) digit: ");
     scanf("%1d", &one);
 
@@ -13,6 +13,9 @@ int main(void)
     printf("Enter second group of five digits: ");
     scanf("%1d%1d%1d%1d%1d", &seven,&eight,&nine,&ten,&eleven);
 
+    printf("Enter the check digit: ");
+    scanf("%d" , &check);
+
     first = one + three + five + seven + nine + eleven;
     second = two + four + six + eight + ten;
     third = (first * 3) + 1;
@@ -21,6 +24,11 @@ int main(void)
     sixth = 9 - fifth;
 
     printf("Check digit: %d\n",sixth);
+
+    if (sixth == check)
+	printf("VALID");
+    else
+	printf("INVALID");
 
     return 0;
 
