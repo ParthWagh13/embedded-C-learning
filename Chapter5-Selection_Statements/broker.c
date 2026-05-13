@@ -1,10 +1,10 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 int main(void)
 
 {
-    int number, value;
-    float shares, rivalcommission, commission;
+    int number;
+    float value, shares, rivalcommission, commission;
 
     printf("Enter the number of shares: ");
     scanf("%d", &number);
@@ -13,7 +13,7 @@ int main(void)
     scanf("%f", &shares);
 
     value = number * shares;
-    printf("The value of the shares is %d\n" , value);
+    printf("The value of the shares is %f\n" , value);
 
        /* Original broker's commission*/
 
@@ -27,7 +27,7 @@ int main(void)
         commission = 76.00f + (0.34f * value)/100.00f;
     }else if (value > 2500){
         commission = 56.00f + (0.66f * value)/ 100.00f;
-    }else if (value >= 2500){
+    }else if (value <= 2500){
         commission = 30.0f  + (value * 1.7f)/100.0f;
     }if (commission < 39){
         commission = 39;
