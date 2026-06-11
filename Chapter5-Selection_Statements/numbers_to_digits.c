@@ -7,7 +7,7 @@ int main(void)
 	printf("Enter a two-digit number: ");
 	scanf("%d", &num);
 
-	if (num > 100){
+	if (num >= 100){
 		printf("error\n");
 	}else if (num < 0){
 		printf("error\n");
